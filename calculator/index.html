@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <form action="">
+        <label for="">Casting weight</label>
+        <input type="text " id ="castingWeight" placeholder="write Casting weight">
+        
+        <label for="">Quantity</label>
+        <input type="text" placeholder="write quantity">
+        
+    </form> -->
+    <input type="text " id="castingWeight" placeholder="write Casting weight" />
+    <input type="text " id="quantity" placeholder="write quantity" />
+
+    <button id="btn">submit</button>
+    
+    <h1 class="res"></h1>
+  </body>
+</html>
+<!-- <script src="/index.js"></script> -->
+<script>
+  let btn = document.getElementById('btn').addEventListener('click', ()=>{
+
+      let Rate = parseInt(document.getElementById('castingWeight').value)
+      let quantity = parseInt(document.getElementById('quantity').value)
+
+      let res = document.getElementById('res');
+    //   console.log( res + qnt);
+
+      if (Rate < 12) {
+        
+        let result = ` rate = ${(Rate * 2.55).toFixed(2)}   ${(Rate * 2.55 * quantity).toFixed(2)}  `
+        res.innerHTML = result
+        
+      console.log(` rate = ${(Rate * 2.55).toFixed(2)}   ${(Rate * 2.55 * quantity).toFixed(2)}  `)
+  }else if (Rate >= 12) {
+      console.log(` rate = ${(Rate * 1.05).toFixed(2)}   ${(Rate * 1.05 * quantity).toFixed(2)}  `)
+  }
+  else {
+      console.log('not a valid number')
+  }
+
+
+  })
+</script>
